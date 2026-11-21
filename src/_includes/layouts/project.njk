@@ -1,0 +1,73 @@
+---
+layout: layouts/base.njk
+---
+
+{% macro plate(img) -%}
+<figure class="plate" data-reveal>
+  <img src="{{ img.src }}" width="{{ img.w }}" height="{{ img.h }}" alt="{{ img.alt }}" loading="lazy">
+  <figcaption><b>{{ img.caption }}</b>{% if img.tag %}<span class="tag{% if img.tag != 'blue' %} {{ img.tag }}{% endif %}">{{ img.sub }}</span>{% else %}<span>{{ img.sub }}</span>{% endif %}</figcaption>
+</figure>
+{%- endmacro %}
+
+{% macro plateRow(imgs) -%}
+{% if imgs | length == 1 %}
+{{ plate(imgs[0]) }}
+{% else %}
+<div class="plate-row">
+  {{ plate(imgs[0]) }}
+  {{ plate(imgs[1]) }}
+</div>
+{% endif %}
+{%- endmacro %}
+
+<section class="section">
+  <div class="wrap">
+    <p class="mono" style="margin:0 0 14px"><a href="/#toc">← 返回目录</a></p>
+
+    <header class="sec-head" data-reveal>
+      <span class="sec-idx">01</span>
+      <h2 class="sec-title">作品</h2>
+      <span class="sec-en">Selected Works</span>
+      <span class="sec-note">按课题顺序排列 · {{ num }} / 03</span>
+    </header>
+
+    <article class="work">
+      <header class="work-head" data-reveal>
+        <div class="w-idx"><span class="w-plate">Plate</span><span class="w-num">{{ num }}</span></div>
+        <div class="w-name">
+          <h3>{{ title }}</h3>
+          {% if subtitle %}<p class="sub">{{ subtitle }}</p>{% endif %}
+          {% if en %}<p class="w-en">{{ en }}</p>{% endif %}
+        </div>
+        <dl class="w-meta">
+          {% for m in meta %}
+          <div><dt>{{ m.label }}</dt><dd>{{ m.value }}</dd></div>
+          {% endfor %}
+        </dl>
+      </header>
+
+      <div class="w-desc" data-reveal>{{ content | safe }}</div>
+
+      {% if cover %}
+      <figure class="plate plate--cover" data-reveal>
+        <img src="{{ cover.src }}" width="{{ cover.w }}" height="{{ cover.h }}" alt="{{ cover.alt }}" loading="lazy">
+        <figcaption><b>{{ cover.caption }}</b><span>{{ cover.sub }}</span></figcaption>
+      </figure>
+      {% endif %}
+
+      {% if sections %}
+        {% for s in sections %}
+          <div class="chapter" data-reveal><span class="dot{% if s.dot and s.dot != 'blue' %} {{ s.dot }}{% endif %}"></span><h4>{{ s.name }}</h4><span class="en">{{ s.en }}</span></div>
+          {% for row in s.images | rows %}
+            {{ plateRow(row) }}
+          {% endfor %}
+        {% endfor %}
+        {% if note %}<p class="mono" style="margin-top:clamp(28px,4vw,48px);letter-spacing:.14em;color:var(--ink-3);line-height:2">{{ note }}</p>{% endif %}
+      {% else %}
+        {% for row in images | rows %}
+          {{ plateRow(row) }}
+        {% endfor %}
+      {% endif %}
+    </article>
+  </div>
+</section>

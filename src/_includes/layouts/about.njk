@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+
+<section class="section">
+  <div class="wrap">
+    <header class="sec-head" data-reveal>
+      <span class="sec-idx">02</span>
+      <h2 class="sec-title">关于</h2>
+      <span class="sec-en">Profile</span>
+      <span class="sec-note">个人简介</span>
+    </header>
+
+    <div class="about-grid">
+      <div class="about-text" data-reveal>
+        {{ content | safe }}
+      </div>
+
+      <dl class="facts" data-reveal data-delay="1">
+        <div><dt>姓名</dt><dd>{{ site.name }}<small>{{ site.nameEn }}</small></dd></div>
+        <div><dt>院校</dt><dd>{{ site.school }}<small>{{ site.schoolEn }}</small></dd></div>
+        <div><dt>专业</dt><dd>{{ site.major }}<small>{{ site.majorEn }}</small></dd></div>
+        <div><dt>邮箱</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>

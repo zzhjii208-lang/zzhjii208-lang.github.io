@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="page">
+  <section class="hero" id="cover" aria-label="封面">
+    <img class="hero__img" src="{{ site.coverImage }}" alt="{{ site.coverAlt }}">
+    <div class="hero-content">
+      <p class="overline"><i></i>{{ site.overline }}</p>
+      <h1 class="name">{{ site.name }}</h1>
+      <p class="name-en">{{ site.nameEn | upper }}</p>
+      <p class="cover-meta">{{ site.coverMeta }}</p>
+      <p class="cover-mail"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+    <p class="hero-scroll" aria-hidden="true">Scroll 向下滚动</p>
+  </section>
+
+  <div class="seam" aria-hidden="true"></div>
+
+  <main class="next" id="main">
+    <section class="toc-page" id="toc">
+      <div class="wrap">
+        <header class="toc-head" data-reveal>
+          <span class="k">CONTENTS</span>
+          <h2>目录</h2>
+          <span class="en">三个课程设计</span>
+        </header>
+
+        <ol class="toc-list">
+          {% for p in collections.projects %}
+          <li data-reveal>
+            <a href="{{ p.url }}">
+              <span class="n">{{ p.data.num }}</span>
+              <span class="t"><h3>{{ p.data.title }}</h3><span class="sub">{{ p.data.tocSub }}</span></span>
+              <span class="m">{{ p.data.deliverable }}<span>{{ p.data.tocNote }}</span><span class="arrow">→</span></span>
+            </a>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="index">
+      <div class="wrap">
+        <header class="sec-head" data-reveal>
+          <span class="sec-idx">03</span>
+          <h2 class="sec-title">素材索引</h2>
+          <span class="sec-en">Source Files</span>
+          <span class="sec-note">原始文件 · 未改动</span>
+        </header>
+
+        <table class="mat" data-reveal>
+          <colgroup>
+            <col style="width:54px"><col style="width:20%"><col style="width:32%">
+            <col style="width:16%"><col style="width:11%"><col>
+          </colgroup>
+          <thead>
+            <tr><th>No.</th><th>文件</th><th>内容</th><th>规格</th><th>大小</th><th style="text-align:right">原始文件</th></tr>
+          </thead>
+          <tbody>
+            {% for s in site.sources %}
+            <tr>
+              <td>{{ s.no }}</td><td class="fname">{{ s.file }}</td><td class="desc">{{ s.desc }}</td>
+              <td class="dim">{{ s.dim }}</td><td class="size">{{ s.size }}</td>
+              <td class="act"><a href="{{ s.href }}" target="_blank" rel="noopener">{{ s.label }}</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+          <caption>
+            {{ site.sourceNote }}
+          </caption>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="/assets/seam.js"></script>

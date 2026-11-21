@@ -1,0 +1,16 @@
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <p class="foot-name">{{ site.name }}<span>{{ site.nameEn | upper }}</span></p>
+      <div class="foot-contact">
+        <div><b>院校</b>{{ site.school }}</div>
+        <div><b>专业</b>{{ site.major }}</div>
+        <div><b>邮箱</b><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© {{ site.year }} {{ site.name }} · 本页图片版权归本人所有</span>
+      <span><a href="#top">回到顶部 ↑</a></span>
+    </div>
+  </div>
+</footer>

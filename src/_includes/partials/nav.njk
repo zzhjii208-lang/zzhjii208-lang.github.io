@@ -1,0 +1,10 @@
+<header class="top" id="top">
+  <span class="bar" aria-hidden="true"></span>
+  <a class="brand" href="/">{{ site.name }} <span>{{ site.nameEn | upper }}</span></a>
+  <nav class="nav" aria-label="页面导航">
+    <a href="/" {% if page.url == '/' %}aria-current="true"{% endif %}><span class="num">01</span>目录</a>
+    <a href="/#toc" {% if page.url == '/' %}aria-current="true"{% endif %}><span class="num">02</span>作品</a>
+    <a href="/about/" {% if page.url == '/about/' %}aria-current="true"{% endif %}><span class="num">03</span>关于</a>
+    <a href="/#index" {% if page.url == '/' %}aria-current="true"{% endif %}><span class="num">04</span>索引</a>
+  </nav>
+</header>

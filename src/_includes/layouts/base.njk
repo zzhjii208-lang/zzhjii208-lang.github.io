@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title %}{{ title }} · {% endif %}{{ site.name }} · 建筑设计作品 | 东南大学建筑系</title>
+<meta name="description" content="张馨文的建筑设计作品集：南京世界文学客厅扩建设计、Lines and Blocks 综合体设计、扬州老城广陵路片区城市更新设计。东南大学建筑系。">
+<meta name="theme-color" content="#16181B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2316181B'/%3E%3Ctext x='32' y='45' font-size='34' font-family='serif' fill='%23F4F2EA' text-anchor='middle'%3E张%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+{% include "partials/nav.njk" %}
+
+{{ content | safe }}
+
+{% include "partials/footer.njk" %}
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="图片查看">
+  <div class="viewer-bar">
+    <span id="vCount">—</span>
+    <div class="vb-r">
+      <span>滚轮缩放 · 拖动平移 · 双击还原</span>
+      <button type="button" id="vClose">关闭 ESC</button>
+    </div>
+  </div>
+  <div class="viewer-stage" id="vStage">
+    <div class="viewer-nav">
+      <button type="button" id="vPrev" aria-label="上一张">←</button>
+      <button type="button" id="vNext" aria-label="下一张">→</button>
+    </div>
+    <img id="vImg" alt="">
+  </div>
+  <div class="viewer-cap">
+    <span id="vCap"></span>
+    <span id="vName"></span>
+  </div>
+</div>
+
+<script src="/assets/main.js"></script>
+</body>
+</html>

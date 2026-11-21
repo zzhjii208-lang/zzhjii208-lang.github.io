@@ -1,0 +1,21 @@
+{
+  "name": "张馨文",
+  "nameEn": "Zhang Xinwen",
+  "overline": "东南大学 · 建筑系 · 建筑学 · 四年级",
+  "school": "东南大学 建筑系",
+  "schoolEn": "School of Architecture, Southeast University",
+  "major": "建筑学 · 四年级",
+  "majorEn": "Architecture, Year 4",
+  "email": "213234052@seu.edu.cn",
+  "coverMeta": "南京世界文学客厅扩建设计 · Lines and Blocks 综合体 · 扬州老城广陵路片区城市更新",
+  "coverImage": "/imgs/cover.jpg",
+  "coverAlt": "封面：暗色夜景建筑渲染",
+  "year": "2026 — 2027",
+  "sources": [
+    { "no": "01", "file": "课题1.pdf", "desc": "南京世界文学客厅扩建设计 · 4 张图板", "dim": "4 页 · A1 横", "size": "25 MB", "href": "/files/project-1.pdf", "label": "打开 PDF" },
+    { "no": "02", "file": "课题2.pdf", "desc": "Lines and Blocks 综合体 · 3 张图板", "dim": "3 页 · A0 横", "size": "34 MB", "href": "/files/project-2.pdf", "label": "打开 PDF" },
+    { "no": "03", "file": "课题3.pdf", "desc": "扬州老城广陵路片区城市更新 · 32 页文本", "dim": "32 页 · A3 横", "size": "54 MB", "href": "/files/project-3.pdf", "label": "打开 PDF" },
+    { "no": "04", "file": "封面.jpg", "desc": "个人主页封面", "dim": "1280 × 1707", "size": "133 KB", "href": "/imgs/cover.jpg", "label": "查看原图" }
+  ],
+  "sourceNote": "网页所用图片均由以上原始 PDF 逐页导出，仅做尺寸压缩，未作重绘或调色。原始文件保持原状，未移动、未删除。"
+}
